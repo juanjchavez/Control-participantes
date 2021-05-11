@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class modulo extends Model
 {
     use HasFactory;
+    
+    protected $table='modulos';
+    protected $primaryKey="Cod_Modulo";
 }

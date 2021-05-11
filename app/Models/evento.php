@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class evento extends Model
 {
     use HasFactory;
+    
+    protected $table='eventos';
+    protected $primaryKey="Cod_Evento";
 }
