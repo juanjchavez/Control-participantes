@@ -112,6 +112,10 @@
                                             API Tokens
                                         </jet-dropdown-link>
 
+                                        <jet-dropdown-link :href="route('register')">
+                                            Registrar
+                                        </jet-dropdown-link>
+
                                         <div class="border-t border-gray-100"></div>
 
                                         <!-- Authentication -->
