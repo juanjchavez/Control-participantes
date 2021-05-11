@@ -17,10 +17,10 @@ class CreateParticipantesTable extends Migration
             $table->integer('Cod_Participante')->autoIncrement();
             $table->unsignedInteger('Cod_Iglesia');
             $table->string('Nombre_Participante',60);
-            $table->string('Cedula',25);
-            $table->string('Telefono',10);
-            $table->string('Correo',100);
-            $table->string('Cargo',60);
+            $table->string('Cedula',25)->nullable();
+            $table->string('Telefono',10)->nullable();
+            $table->string('Correo',100)->nullable();
+            $table->string('Cargo',60)->nullable();
             $table->timestamps();
 
             $table->foreign('Cod_Iglesia')->references('Cod_Iglesia')->on('iglesias');

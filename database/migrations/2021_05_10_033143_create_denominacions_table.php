@@ -16,11 +16,11 @@ class CreateDenominacionsTable extends Migration
         Schema::create('denominaciones', function (Blueprint $table) {
             $table->integer('Cod_Denominacion');
             $table->string('N_Denominacion',200);
-            $table->string('N_Contacto',60);
-            $table->string('Cargo_Contacto',60);
-            $table->string('Telefono',10);
-            $table->string('Direccion',300);
-            $table->tinyText('Comentario');
+            $table->string('N_Contacto',60)->nullable();
+            $table->string('Cargo_Contacto',60)->nullable();
+            $table->string('Telefono',10)->nullable();
+            $table->string('Direccion',300)->nullable();
+            $table->tinyText('Comentario')->nullable();
             $table->timestamps();
         });
     }

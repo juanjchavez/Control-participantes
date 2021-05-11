@@ -18,11 +18,11 @@ class CreateIglesiasTable extends Migration
             $table->unsignedInteger('Cod_Departamento');
             $table->unsignedInteger('Cod_Denominacion');
             $table->string('N_Iglesia',100);
-            $table->string('N_Pastor',80);
-            $table->string('Telefono',10);
-            $table->string('Correo',100);
-            $table->string('Direccion',300);
-            $table->tinyText('Comentarios');
+            $table->string('N_Pastor',80)->nullable();
+            $table->string('Telefono',10)->nullable();
+            $table->string('Correo',100)->nullable();
+            $table->string('Direccion',300)->nullable();
+            $table->tinyText('Comentarios')->nullable();
             $table->timestamps();
 
             $table->foreign('Cod_Departamento')->references('Cod_Departamento')->on('departamentos');

@@ -14,6 +14,8 @@ class EvaluacionXEvento extends Migration
     public function up()
     {
         Schema::create('evaluacion_X_evento', function (Blueprint $table) {
+            $table->primary(['Cod_Evaluacion','Cod_Modulo']);
+            
             $table->unsignedInteger('Cod_Evaluacion');
             $table->unsignedInteger('Cod_Modulo');
             $table->text('Respuestas');

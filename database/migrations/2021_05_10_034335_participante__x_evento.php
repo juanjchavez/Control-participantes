@@ -14,6 +14,8 @@ class ParticipanteXEvento extends Migration
     public function up()
     {
         Schema::create('participante_X_evento', function (Blueprint $table) {
+            $table->primary(['Cod_Participante','Cod_Modulo']);
+            
             $table->unsignedInteger('Cod_Modulo');
             $table->unsignedInteger('Cod_Participante');
 
