@@ -14,8 +14,16 @@ class CreateParticipantesTable extends Migration
     public function up()
     {
         Schema::create('participantes', function (Blueprint $table) {
-            $table->id();
+            $table->integer('Cod_Participante')->autoIncrement();
+            $table->unsignedInteger('Cod_Iglesia');
+            $table->string('Nombre_Participante',60);
+            $table->string('Cedula',25);
+            $table->string('Telefono',10);
+            $table->string('Correo',100);
+            $table->string('Cargo',60);
             $table->timestamps();
+
+            $table->foreign('Cod_Iglesia')->references('Cod_Iglesia')->on('iglesias');
         });
     }
 

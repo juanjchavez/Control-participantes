@@ -14,8 +14,12 @@ class CreateModulosTable extends Migration
     public function up()
     {
         Schema::create('modulos', function (Blueprint $table) {
-            $table->id();
+            $table->integer('Cod_Modulo')->autoIncrement();
+            $table->unsignedInteger('Cod_Curso');
+            $table->string('N_Modulo',60);
             $table->timestamps();
+
+            $table->foreign('Cod_Curso')->references('Cod_Curso')->on('cursos');
         });
     }
 

@@ -13,8 +13,10 @@ class CreateEvaluacionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('evaluacions', function (Blueprint $table) {
-            $table->id();
+        Schema::create('evaluaciones', function (Blueprint $table) {
+            $table->integer('Cod_Evaluacion')->autoIncrement();
+            $table->string('N_Evaluacion',60);
+            $table->text('Preguntas');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateEvaluacionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('evaluacions');
+        Schema::dropIfExists('evaluaciones');
     }
 }
