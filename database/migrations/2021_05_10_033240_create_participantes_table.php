@@ -14,8 +14,8 @@ class CreateParticipantesTable extends Migration
     public function up()
     {
         Schema::create('participantes', function (Blueprint $table) {
-            $table->integer('Cod_Participante')->autoIncrement();
-            $table->unsignedInteger('Cod_Iglesia');
+           $table->id('Cod_Participante');
+            $table->unsignedBigInteger('Cod_Iglesia');
             $table->string('Nombre_Participante',60);
             $table->string('Cedula',25)->nullable();
             $table->string('Telefono',10)->nullable();

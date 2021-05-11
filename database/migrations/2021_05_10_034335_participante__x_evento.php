@@ -16,8 +16,8 @@ class ParticipanteXEvento extends Migration
         Schema::create('participante_X_evento', function (Blueprint $table) {
             $table->primary(['Cod_Participante','Cod_Modulo']);
             
-            $table->unsignedInteger('Cod_Modulo');
-            $table->unsignedInteger('Cod_Participante');
+            $table->unsignedBigInteger('Cod_Modulo');
+            $table->unsignedBigInteger('Cod_Participante');
 
             $table->foreign('Cod_Modulo')->references('Cod_Modulo')->on('modulos');
             $table->foreign('Cod_Participante')->references('Cod_Participante')->on('participantes');

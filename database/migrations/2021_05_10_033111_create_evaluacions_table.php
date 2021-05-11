@@ -14,7 +14,7 @@ class CreateEvaluacionsTable extends Migration
     public function up()
     {
         Schema::create('evaluaciones', function (Blueprint $table) {
-            $table->integer('Cod_Evaluacion')->autoIncrement();
+           $table->id('Cod_Evaluacion');
             $table->string('N_Evaluacion',60);
             $table->text('Preguntas');
             $table->timestamps();

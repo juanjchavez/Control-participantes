@@ -14,9 +14,9 @@ class CreateEventosTable extends Migration
     public function up()
     {
         Schema::create('eventos', function (Blueprint $table) {
-            $table->integer('Cod_Evento')->autoIncrement();
-            $table->unsignedInteger('Cod_Modulo');
-            $table->unsignedInteger('Cod_Iglesia');
+           $table->id('Cod_Evento');
+            $table->unsignedBigInteger('Cod_Modulo');
+            $table->unsignedBigInteger('Cod_Iglesia');
             $table->date('fecha_evento');
             $table->tinyText('Descripcion');
             $table->timestamps();

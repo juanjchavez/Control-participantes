@@ -15,9 +15,9 @@ class EvaluacionXEvento extends Migration
     {
         Schema::create('evaluacion_X_evento', function (Blueprint $table) {
             $table->primary(['Cod_Evaluacion','Cod_Modulo']);
-            
-            $table->unsignedInteger('Cod_Evaluacion');
-            $table->unsignedInteger('Cod_Modulo');
+
+            $table->unsignedBigInteger('Cod_Evaluacion');
+            $table->unsignedBigInteger('Cod_Modulo');
             $table->text('Respuestas');
             
             $table->foreign('Cod_Evaluacion')->references('Cod_Evaluacion')->on('evaluaciones');

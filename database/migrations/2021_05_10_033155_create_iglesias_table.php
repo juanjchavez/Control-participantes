@@ -14,9 +14,9 @@ class CreateIglesiasTable extends Migration
     public function up()
     {
         Schema::create('iglesias', function (Blueprint $table) {
-            $table->integer('Cod_Iglesia')->autoIncrement();
-            $table->unsignedInteger('Cod_Departamento');
-            $table->unsignedInteger('Cod_Denominacion');
+           $table->id('Cod_Iglesia');
+            $table->unsignedBigInteger('Cod_Departamento');
+            $table->unsignedBigInteger('Cod_Denominacion');
             $table->string('N_Iglesia',100);
             $table->string('N_Pastor',80)->nullable();
             $table->string('Telefono',10)->nullable();

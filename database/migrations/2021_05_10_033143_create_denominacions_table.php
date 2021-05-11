@@ -14,7 +14,7 @@ class CreateDenominacionsTable extends Migration
     public function up()
     {
         Schema::create('denominaciones', function (Blueprint $table) {
-            $table->integer('Cod_Denominacion');
+           $table->id('Cod_Denominacion');
             $table->string('N_Denominacion',200);
             $table->string('N_Contacto',60)->nullable();
             $table->string('Cargo_Contacto',60)->nullable();
