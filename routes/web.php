@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DenominacionController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -15,10 +16,19 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+}); */
+
+Route::get('/', function () {
+    return Inertia::render('Auth/Login', [
+        //'canLogin' => Route::has('login'),
+        //'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
@@ -32,5 +42,7 @@ Route::middleware(['auth:sanctum', 'verified'])
     ->get('/register', [Laravel\Fortify\Http\Controllers\RegisteredUserController::class,'create'])
     ->name('register');
 
-    Route::middleware(['auth:sanctum', 'verified'])
+Route::middleware(['auth:sanctum', 'verified'])
     ->post('/register', [Laravel\Fortify\Http\Controllers\RegisteredUserController::class,'store']);
+
+Route::middleware(['auth:sanctum','verified'])->resource('denominaciones', DenominacionController::class);

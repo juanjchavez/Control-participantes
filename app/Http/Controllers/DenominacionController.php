@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\denominacion;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class DenominacionController extends Controller
 {
@@ -24,7 +25,7 @@ class DenominacionController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Denominacion/create');
     }
 
     /**
